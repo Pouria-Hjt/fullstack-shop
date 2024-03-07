@@ -9,12 +9,10 @@ datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
 }
-
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@index([name])
-}
+ model MetaData {
+    id Int  @id @default(autoincrement())
+    title String
+    description String
+    icon String
+    keywords String
+ }
